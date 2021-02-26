@@ -31,5 +31,8 @@ Route::group(['middleware' => 'auth:admin'], function(){
 
     //Kelas
     Route::resource('kelas', 'KelasController');
+
+    //Petugas
+    Route::resource('petugas', 'PetugasController');
 });
 
