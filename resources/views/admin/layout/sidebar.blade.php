@@ -10,6 +10,10 @@
         {{-- dashboard --}}
         <li class="menu-header">Dashboard</li>
         <li class="@yield('dashboard')"><a class="nav-link" href="/dashboard"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+        {{-- Entry data --}}
+        <li class="menu-header">Entry data</li>
+        <li class="@yield('siswa')"><a class="nav-link" href="/siswa"><i class="fas fa-user"></i> <span>siswa</span></a></li>
+    
       </ul>
   </aside>
 </div>
