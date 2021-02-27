@@ -12,8 +12,8 @@
         <li class="@yield('dashboard')"><a class="nav-link" href="/dashboard"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
         {{-- Entry data --}}
         <li class="menu-header">Entry data</li>
-        <li class="@yield('siswa')"><a class="nav-link" href="/siswa"><i class="fas fa-user"></i> <span>siswa</span></a></li>
-    
+        <li class="@yield('siswa')"><a class="nav-link" href="/siswa"><i class="fas fa-user"></i> <span>Siswa</span></a></li>
+        <li class="@yield('kelas')"><a class="nav-link" href="/kelas"><i class="fas fa-user"></i> <span>Kelas</span></a></li>
       </ul>
   </aside>
 </div>

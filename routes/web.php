@@ -29,5 +29,7 @@ Route::group(['middleware' => 'auth:admin'], function(){
     //siswa
     Route::resource('siswa', 'SiswaController');
 
+    //Kelas
+    Route::resource('kelas', 'KelasController');
 });
 
