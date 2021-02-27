@@ -1,0 +1,74 @@
+@font-face {
+     font-family: "Mblack";
+     src: url('../font/MontserratBlack.ttf')
+}
+
+@font-face {
+     font-family: "Mblackita";
+     src: url('../font/MontserratBlackItalic.ttf')
+}
+
+@font-face {
+     font-family: "Mbold";
+     src: url('../font/MontserratBold.ttf')
+}
+
+@font-face {
+     font-family: "Mboldita";
+     src: url('../font/MontserratBoldItalic.ttf')
+}
+
+@font-face {
+     font-family: "Mregular";
+     src: url('../font/MontserratRegular.ttf')
+}
+
+@font-face {
+     font-family: "MSemibold";
+     src: url('../font/MontserratSemiBold.ttf')
+}
+
+@font-face {
+     font-family: "MSemiboldita";
+     src: url('../font/MontserratSemiBoldItalic.ttf')
+}
+
+@font-face {
+     font-family: "Mitalic";
+     src: url('../font/MontserratItalic.ttf')
+}
+
+@font-face {
+     font-family: "Mmedium";
+     src: url('../font/MontserratMedium.ttf')
+}
+
+@font-face {
+     font-family: "Mmediumita";
+     src: url('../font/MontserratMediumItalic.ttf')
+}
+
+@font-face {
+     font-family: "sbita";
+     src: url('../font/MontserratSemiBoldItalic.ttf')
+}
+
+#me {
+    font-family: "Mmedium"
+}
+
+#re {
+    font-family: "Mregular";
+}
+
+#bo {
+    font-family: "Mbold";
+}
+
+#sb {
+    font-family: "MSemibold";
+}
+
+#sbita {
+    font-family: "sbita";
+}

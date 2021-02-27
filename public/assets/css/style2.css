@@ -1,0 +1,189 @@
+#img{
+	background-size: 350px 200px;
+	background-repeat: no-repeat;
+	padding: 15px;
+}
+
+#card{
+	border-radius: 25px;
+	transition: transform 1s ease;
+}
+
+#card-cart{
+	border: none;
+	border-radius: 7px;
+	transition: transform 1s ease;
+}
+
+#card:hover{
+	transform: scale(1.1);
+}
+
+#input-cari{
+	border-radius: 15px 0px 0px 15px;
+	border-color: #FFFFFF;
+}
+
+.btn-cari{
+	border-radius: 0px 15px 15px 0px;
+	color: #FFFFFF;
+	border-color: #d9534f;
+}
+
+.btn-cari:hover {
+	background-color: #FFFFFF;
+	border-color: #FFFFFF;
+	color: #d9534f;
+}
+
+#btn-menu{
+	border-radius: 15px;
+	transition: transform 1s ease;
+}
+
+#btn-menu:hover {
+	background-color: #ffffff;
+	color: #d9534f;
+	transform: scale(1.2);
+}
+
+#btn-shop{
+	transition: transform 1s ease;
+}
+
+#btn-shop:hover{
+	background-color: #ffffff;
+	color: #d9534f;
+	transform: scale(1.1);
+}
+
+#input {
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+#input:hover{
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+#button-cart{
+	color: darkgrey;
+}
+
+#button-cart:hover{
+	transform: scale(1.1);
+	color:  #d9534f;
+}
+
+.garis-bawah{
+	background-color: #f1f1f1;
+	width: 3px;
+	height: 3px;
+}
+
+.btn-logout {
+	display: relative;
+}
+
+.btn-logout:hover {
+	transform: scale(1.05);
+	border-color:#d9534f;
+	color: #d9534f;
+	background-color: transparent;
+}
+
+/* Dropup Button */
+.dropbtn {
+	background-color:#d9534f;
+	border-radius: 100%;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	padding-left: 20px; padding-right: 20px;
+  }
+  
+  /* The container <div> - needed to position the dropup content */
+  .dropup {
+	position: relative;
+	display: inline-block;
+  }
+  
+  /* Dropup content (Hidden by Default) */
+  .dropup-content {
+	display: none;
+	position: absolute;
+	bottom: 55px;
+	background-color: transparent;
+	min-width: 130px;
+	z-index: 1;
+  }
+  
+  /* Links inside the dropup */
+  .dropup-content a {
+	color: #d9534f;
+	padding: 12px 0px;
+	text-decoration: none;
+	display: block;
+  }
+  
+  /* Change color of dropup links on hover */
+  .dropup-content a:hover {
+	text-shadow: 2px 2px 5px black;
+	}
+  
+  /* Show the dropup menu on hover */
+  .dropup:hover .dropup-content {
+	display: block;
+  }
+  
+  /* Change the background color of the dropup button when the dropup content is shown */
+  .dropup:hover .dropbtn {
+	transform: scale(1.05);
+	border-color:#d9534f;
+	color: #d9534f;
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	background-color: white;
+  }
+
+  #feedback-head {
+	  background-color: white;
+	  border-top-left-radius: 20px;
+	  border-top-right-radius: 20px;
+	  box-shadow: 0px -3px 8px 1px #c4c4c4;
+	  letter-spacing: 15px;
+  }
+
+  #feedback-body {
+	background-color: white;
+  }
+
+  #feedback-button {
+	  background-color: #d9534f;
+	  color: white;
+	  border-radius: 4px;
+  }
+
+  #feedback-button:hover {
+	transform: scale(1.05);
+	border-color:#d9534f;
+	color: #d9534f;
+	background-color: transparent;
+  }
+
+  #feedback-button-back {
+	background-color: #c4c4c4;
+	color: white;
+	border-color: transparent;
+	border-radius: 4px;
+  }
+
+#feedback-button-back:hover {
+  transform: scale(1.05);
+  color: #ffffff;
+  background-color: #696969;
+} 
+
