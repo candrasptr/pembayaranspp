@@ -44,5 +44,13 @@ Route::group(['middleware' => 'auth:admin'], function(){
     Route::get('transaksi_bayar/{id}', 'TransaksiController@bayar')->name('transaksi.bayar');
     Route::get('transaksi_batal/{id}', 'TransaksiController@batal')->name('transaksi.batal');
     Route::get('transaksi_pdf/{id}', 'TransaksiController@pdf')->name('transaksi.pdf');
+
+    // Laporan
+    Route::get('data_guru','LaporanController@index');
+    Route::get('data_guru_cetak','LaporanController@cetakguru');
+    Route::get('data_siswa','LaporanController@datasiswa');
+    Route::get('data_siswa_cetak','LaporanController@datasiswacetak');
+    Route::view('rekap', 'admin/laporan.rekap');
+    Route::get('cetak', 'LaporanController@cetak');
 });
 
