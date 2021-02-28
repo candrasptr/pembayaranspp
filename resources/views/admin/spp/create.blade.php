@@ -23,7 +23,7 @@
                   | {{ $message }}
                 @enderror
               </label>
-              <input type="number" name="tahun" value="{{old('tahun')}}" class="form-control" autocomplete="off">  
+              <input type="text" name="tahun" value="{{old('tahun')}}" class="form-control" autocomplete="off">  
             </div>
           </div>
 

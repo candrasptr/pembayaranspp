@@ -9,7 +9,7 @@ class SppController extends Controller
 {
     private function _validation(Request $request){
 	    $validation = $request->validate([
-	        'tahun' => 'required|max:5',
+	        'tahun' => 'required|max:10',
             'nominal' => 'required|max:10'
 	    ],
 	    [

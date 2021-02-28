@@ -24,7 +24,7 @@
                   | {{ $message }}
                 @enderror
               </label>
-              <input type="number" name="tahun" 
+              <input type="text" name="tahun" 
               @if (old('tahun'))
                   value="{{old('tahun')}}"
               @else

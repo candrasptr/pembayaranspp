@@ -9,7 +9,7 @@
           
           <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             <img alt="image" src="{{ asset('assets/img/avatar/avatar-5.png') }}" class="rounded-circle mr-1">
-            <div class="d-sm-none d-lg-inline-block">Hi, </div></a>
+            <div class="d-sm-none d-lg-inline-block">Hi, {{ Auth::guard('admin')->user()->nama_petugas }}</div></a>
             <div class="dropdown-menu dropdown-menu-right">
               <a href="features-profile.html" class="dropdown-item has-icon">
                 <i class="far fa-user"></i> Profile

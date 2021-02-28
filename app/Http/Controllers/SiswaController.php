@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
+use Carbon\Carbon;
 
 class SiswaController extends Controller
 {
@@ -69,6 +71,23 @@ class SiswaController extends Controller
             'no_telp'=>$request->notelp,
             'status'=>'belum_dibayar'
         ]);
+
+        $now = date('Y-m-d');
+        $data = DB::table('tbl_spp')->get();
+        $bulan = Carbon::now('m');
+        $bulans = $bulan->isoFormat('M');
+        foreach ($data as $key) {
+            DB::table('tbl_pembayaran')->insert([
+                'petugas_id'=>Auth::guard('admin')->user()->id_petugas,
+                'nisn_siswa'=>$request->nisn,
+                'tahun_bayar'=>$key->tahun,
+                'spp_id'=>$key->id_spp,
+                'jumlah_bayar'=>$key->nominal,
+                'ket'=>'belum'
+            ]);
+        }
+        
+
         return redirect('siswa')->with('message','Data berhasil ditambahkan');
     }
 

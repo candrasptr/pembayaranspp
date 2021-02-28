@@ -37,5 +37,9 @@ Route::group(['middleware' => 'auth:admin'], function(){
 
     //Spp
     Route::resource('spp', 'SppController');
+
+    //Transaksi
+    Route::get('transaksi', 'TransaksiController@index');
+    Route::post('transaksi_cari', 'TransaksiController@cari');
 });
 
