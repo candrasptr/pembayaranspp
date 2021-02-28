@@ -40,6 +40,9 @@ Route::group(['middleware' => 'auth:admin'], function(){
 
     //Transaksi
     Route::get('transaksi', 'TransaksiController@index');
-    Route::post('transaksi_cari', 'TransaksiController@cari');
+    Route::get('transaksi_cari', 'TransaksiController@cari');
+    Route::get('transaksi_bayar/{id}', 'TransaksiController@bayar')->name('transaksi.bayar');
+    Route::get('transaksi_batal/{id}', 'TransaksiController@batal')->name('transaksi.batal');
+    Route::get('transaksi_pdf/{id}', 'TransaksiController@pdf')->name('transaksi.pdf');
 });
 

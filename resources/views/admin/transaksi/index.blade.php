@@ -14,7 +14,7 @@
 			<span class="text-danger"><i class="fas fa-user"></i> {{ Auth::guard('admin')->user()->nama_petugas }}</span>
 		</div>
 		<div class="col-md-6 mt-5">
-			<form action="/transaksi_cari" method="POST">
+			<form action="/transaksi_cari" method="GET">
 				@csrf
 				<div class="input-group input-group-sm mb-3">
 					<div class="input-group-prepend">
@@ -30,7 +30,7 @@
         <div class="col-md-12 mb-5"></div>
 		@if(session('message'))
 		<div class="col-md-12">
-			<div class="alert alert-danger alert-dismissible show fade">
+			<div class="alert alert-success alert-dismissible show fade">
 				<div class="alert-body">
 				  <button class="close" data-dismiss="alert">
 					<span>×</span>
@@ -76,6 +76,7 @@
 				  <th scope="col">No</th>
 				  <th scope="col">Tahun spp</th>
 				  <th scope="col">Nominal</th>
+                  <th>Tanggal bayar</th>
 				  <th scope="col">Status</th>
                   <th></th>
 				</tr>
@@ -89,13 +90,18 @@
 					<th scope="row">{{ $no++ }}</th>
 					<td>{{ $item->tahun }}</td>
 					<td>{{ $item->nominal }}</td>
+                    <td>@if ($item->tanggal_bayar != '')
+                        {{ $item->tanggal_bayar }}
+                    @else
+                        belum
+                    @endif</td>
 					<td>{{ $item->ket }}</td>
 					<td>
                         @if ($item->ket == 'lunas')
-                            <a href="" class="btn btn-warning mr-2"><i class="fas fa-edit"></i></a>
-                            <a href="" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                            <a href="{{ route('transaksi.pdf',$item->id_pembayaran) }}" class="btn btn-warning mr-2 mb-2">CETAK</a>
+                            <a href="{{ route('transaksi.batal',$item->id_pembayaran) }}" class="btn btn-danger">BATAL</a>
                         @else
-                            <a href="" class="btn btn-success">Bayar</a>
+                            <a href="{{ route('transaksi.bayar',$item->id_pembayaran) }}" class="btn btn-success">Bayar</a>
                         @endif
                     </td>
 				  </tr>
