@@ -12,6 +12,8 @@
   <!-- CSS Libraries -->
   <link rel="stylesheet" href="../node_modules/ionicons201/css/ionicons.min.css">
   <!-- Template CSS -->
+  
+  <link rel="icon" href="{{ asset('assets/img/logosmk.png') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/font.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/css/style2.css')}}">

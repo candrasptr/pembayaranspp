@@ -165,13 +165,25 @@ class SiswaController extends Controller
             $join->on('tbl_pembayaran.spp_id','=','tbl_spp.id_spp');
         })->where('ket','lunas')
         ->get();
-        if (Auth::guard('admin')->check()) {
-            return view('admin/siswa.history',['data'=>$data]);
-        } else {
-            return view('siswa.history',['data'=>$data]);
-        }
+        return view('admin/siswa.history',['data'=>$data]);
    
     }
+
+    public function historysiswa($id)
+    {
+        $data = DB::table('tbl_siswa')->where('nisn',$id)
+        ->join('tbl_kelas', function($join){
+            $join->on('tbl_siswa.kelas_id','=','tbl_kelas.id_kelas');
+        })->join('tbl_pembayaran', function($join){
+            $join->on('tbl_siswa.nisn','=','tbl_pembayaran.nisn_siswa');
+        })->join('tbl_spp', function($join){
+            $join->on('tbl_pembayaran.spp_id','=','tbl_spp.id_spp');
+        })->where('ket','lunas')
+        ->get();
+        return view('siswa.history',['data'=>$data]);
+   
+    }
+
     public function login(Request $request)
     {
         if (Auth::guard('siswa')->attempt(['nisn' => $request->nisn, 'password' => $request->password])) {
@@ -185,5 +197,14 @@ class SiswaController extends Controller
     public function depan()
     {
         return view('siswa.index');
+    }
+
+    public function logout()
+    {
+      if (Auth::guard('siswa')->check()) {
+        Auth::guard('siswa')->logout();
+      } 
+      return redirect('/');
+  
     }
 }

@@ -39,7 +39,7 @@ class LoginController extends Controller
         Auth::guard('user')->logout();
       }
   
-      return redirect('/');
+      return redirect('/login');
   
     }
 }

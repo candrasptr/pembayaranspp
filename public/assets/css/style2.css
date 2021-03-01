@@ -19,6 +19,14 @@
 	transform: scale(1.1);
 }
 
+#text-hejo {
+	color: #47c363;
+}
+
+.hejo {
+	color: #47c363;
+}
+
 #input-cari{
 	border-radius: 15px 0px 0px 15px;
 	border-color: #FFFFFF;

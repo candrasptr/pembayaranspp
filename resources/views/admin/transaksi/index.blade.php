@@ -1,13 +1,13 @@
 @extends('admin/layout.master')
 
-@section('title','Pembayaran')
+@section('title','Pembayaran SPP')
 @section('title2','index')
 @section('transaksi','active')
 @section('konten')
 <div class="container-fluid mt-3">
 	<div class="row">
 		<div class="col-md-6">
-			<img src="{{ asset('assets/img/logo4.png') }}" style="width: 150px;" alt="">
+			<img src="{{ asset('assets/img/smk.png') }}" style="width: 150px;" alt="">
 		</div>
 		<div class="col-md-6 text-right">
 			<span id="me">Petugas</span><br>

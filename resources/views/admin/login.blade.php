@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="{{ asset('node_modules/bootstrap-social/bootstrap-social.css')}}">
 
   <!-- Template CSS -->
+  <link rel="icon" href="{{ asset('assets/img/logosmk.png') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/css/components.css')}}">
 </head>
@@ -25,7 +26,7 @@
         <div class="row">
           <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
             <div class="login-brand">
-              <img src="../assets/img/logo.jpg" alt="logo" width="100" class="shadow-light rounded-circle">
+              <img src="../assets/img/teacher.png" alt="logo" width="100" class="shadow-sm rounded-circle">
             </div>
 
             <div class="card card-success">
