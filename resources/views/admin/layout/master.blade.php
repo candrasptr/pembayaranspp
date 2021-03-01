@@ -14,6 +14,7 @@
   <!-- Template CSS -->
   <link rel="stylesheet" href="{{ asset('assets/css/font.css') }}">
   <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}">
+  <link rel="stylesheet" href="{{ asset('assets/css/style2.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/css/components.css')}}">
 
   @yield('page-styles')

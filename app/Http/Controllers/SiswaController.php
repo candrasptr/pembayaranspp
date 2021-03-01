@@ -148,4 +148,18 @@ class SiswaController extends Controller
         DB::table('tbl_siswa')->where('nisn',$id)->delete();
         return redirect()->back()->with('message','data berhasil dihapus');
     }
+
+    public function history($id)
+    {
+        $data = DB::table('tbl_siswa')->where('nisn',$id)
+        ->join('tbl_kelas', function($join){
+            $join->on('tbl_siswa.kelas_id','=','tbl_kelas.id_kelas');
+        })->join('tbl_pembayaran', function($join){
+            $join->on('tbl_siswa.nisn','=','tbl_pembayaran.nisn_siswa');
+        })->join('tbl_spp', function($join){
+            $join->on('tbl_pembayaran.spp_id','=','tbl_spp.id_spp');
+        })->where('ket','lunas')
+        ->get();
+        return view('admin/siswa.history',['data'=>$data]);
+    }
 }

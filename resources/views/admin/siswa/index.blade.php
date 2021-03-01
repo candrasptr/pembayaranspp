@@ -66,14 +66,15 @@
                 <td>
 
                   {{-- Button edit --}}
-                  <a href="{{ route('siswa.edit',$item->nisn) }}" class="btn btn-success"><i class="fas fa-edit"></i></a>
-                  <a href="#" data-id="" class="btn btn-danger confirm_script-{{$item->nisn}} mr-3">
+                  <a href="{{ route('siswa.edit',$item->nisn) }}" class="btn btn-success mt-2"><i class="fas fa-edit"></i></a>
+                  <a href="#" data-id="" class="btn btn-danger confirm_script-{{$item->nisn}} mr-3 mt-2">
                     <form action="{{ route('siswa.destroy',$item->nisn)}}" class="delete_form-{{$item->nisn}}" method="POST">
                     @method('DELETE')
                     @csrf
                     </form>
                     <i class="fas fa-trash"></i>
-                </a>
+                  </a><br>
+                  <a href="{{ route('siswa.history',$item->nisn) }}" class="btn btn-warning mt-2"> HISTORY </a>
               </td>
             </tr>
             @push('page-scripts')

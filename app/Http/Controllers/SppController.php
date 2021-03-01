@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class SppController extends Controller
 {
@@ -54,6 +55,19 @@ class SppController extends Controller
             'tahun'=>$request->tahun,
             'nominal'=>$request->nominal
         ]);
+        
+        $data_last = DB::table('tbl_spp')->latest()->first();
+        $data = DB::table('tbl_siswa')->get();
+        foreach ($data as $key) {
+            DB::table('tbl_pembayaran')->insert([
+                'petugas_id'=>Auth::guard('admin')->user()->id_petugas,
+                'nisn_siswa'=>$key->nisn,
+                'tahun_bayar'=>$request->tahun,
+                'spp_id'=>$data_last->id_spp,
+                'jumlah_bayar'=>$request->nominal,
+                'ket'=>'belum'
+            ]);
+        }
         return redirect('spp')->with('message','Data berhasil disimpan');
     }
 

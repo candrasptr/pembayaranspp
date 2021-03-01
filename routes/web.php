@@ -28,7 +28,7 @@ Route::group(['middleware' => 'auth:admin'], function(){
 
     //siswa
     Route::resource('siswa', 'SiswaController');
-
+    Route::get('siswa_history/{id}', 'SiswaController@History')->name('siswa.history');
     //Kelas
     Route::resource('kelas', 'KelasController');
 

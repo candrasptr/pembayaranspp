@@ -99,7 +99,7 @@
 					<td>
                         @if ($item->ket == 'lunas')
                             <a href="{{ route('transaksi.pdf',$item->id_pembayaran) }}" class="btn btn-warning mr-2 mb-2">CETAK</a>
-                            <a href="{{ route('transaksi.batal',$item->id_pembayaran) }}" class="btn btn-danger">BATAL</a>
+                            <a href="{{ route('transaksi.batal',$item->id_pembayaran) }}" class="btn btn-danger mb-2">BATAL</a>
                         @else
                             <a href="{{ route('transaksi.bayar',$item->id_pembayaran) }}" class="btn btn-success">Bayar</a>
                         @endif
