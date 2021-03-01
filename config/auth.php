@@ -36,11 +36,6 @@ return [
     */
 
     'guards' => [
-        'web' => [
-            'driver' => 'session',
-            'provider' => 'users',
-        ],
-
         'admin' => [
             'driver' => 'session',
             'provider' => 'admin',
@@ -52,9 +47,14 @@ return [
             'hash' => false,
         ],
 
-        'api' => [
+        'siswa' => [
+            'driver' => 'session',
+            'provider' => 'siswa',
+        ],
+
+        'siswa-api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'siswa',
             'hash' => false,
         ],
     ],
@@ -85,6 +85,11 @@ return [
         'admin' => [
             'driver' => 'eloquent',
             'model' => App\admin::class,
+        ],
+
+        'siswa' => [
+            'driver' => 'eloquent',
+            'model' => App\Siswa::class,
         ],
 
         // 'users' => [

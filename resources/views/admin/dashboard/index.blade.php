@@ -49,36 +49,44 @@
             <div class="card">
               <div class="card-header">
                 <h4 class="d-inline">Admin</h4>
+                @if (Auth::guard('admin')->user()->level == 'admin')
                 <div class="card-header-action">
-                  <a href="/petugas" class="btn btn-success">View All</a>
-                </div>
+                    <a href="/petugas" class="btn btn-success">View All</a>
+                </div> 
+                @endif
               </div>
               <div class="card-body">
                 <ul class="list-unstyled list-unstyled-border">
-                  <li class="media">
-                    <img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-2.png" alt="avatar">
-                    <div class="media-body">
-                      <h6 class="media-title"><a href="#"></a></h6>
-                      <div class="text-small text-muted"><div class="bullet"></div> <span class="text-primary"></span></div>
-                    </div>
-                  </li>       
+                    @foreach ($admin as $item)
+                    <li class="media">
+                        <img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-2.png" alt="avatar">
+                        <div class="media-body">
+                          <h6 class="media-title"><a href="#">{{ $item->nama_petugas }}</a></h6>
+                          <div class="text-small text-muted">{{ $item->username }}
+                        </div>
+                    </li>  
+                    @endforeach
                 </ul>
               </div>
               <div class="card-header">
                 <h4 class="d-inline">Petugas</h4>
+                @if (Auth::guard('admin')->user()->level == 'admin')
                 <div class="card-header-action">
-                  <a href="/petugas" class="btn btn-success">View All</a>
+                    <a href="/petugas" class="btn btn-success">View All</a>
                 </div>
+                @endif
               </div>
               <div class="card-body">
                 <ul class="list-unstyled list-unstyled-border">
-                  <li class="media">
-                    <img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-1.png" alt="avatar">
-                    <div class="media-body">
-                      <h6 class="media-title"><a href="#"></a></h6>
-                      <div class="text-small text-muted"><div class="bullet"></div> <span class="text-primary"></span></div>
-                    </div>
-                  </li>       
+                    @foreach ($petugas as $item)
+                    <li class="media">
+                        <img class="mr-3 rounded-circle" width="50" src="../assets/img/avatar/avatar-2.png" alt="avatar">
+                        <div class="media-body">
+                          <h6 class="media-title"><a href="#">{{ $item->nama_petugas }}</a></h6>
+                          <div class="text-small text-muted">{{ $item->username }}
+                        </div>
+                    </li>  
+                    @endforeach     
                 </ul>
               </div>
             </div>

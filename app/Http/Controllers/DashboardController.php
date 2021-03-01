@@ -18,6 +18,8 @@ class DashboardController extends Controller
         // $totallunas = DB::table('tbl_pembayaran')->where('tahun_bayar',$tahun)->where('ket','lunas')->count();
         $totalsiswa = DB::table('tbl_siswa')->count();
         $totalpetugas = DB::table('tbl_petugas')->count();
-        return view('admin/dashboard.index',['totalsiswa'=>$totalsiswa,'totalpetugas'=>$totalpetugas]);
+        $petugas = DB::table('tbl_petugas')->where('level','petugas')->get();
+        $admin = DB::table('tbl_petugas')->where('level','admin')->get();
+        return view('admin/dashboard.index',['totalsiswa'=>$totalsiswa,'totalpetugas'=>$totalpetugas,'petugas'=>$petugas,'admin'=>$admin]);
     }
 }

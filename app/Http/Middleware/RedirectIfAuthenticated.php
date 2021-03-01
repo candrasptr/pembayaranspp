@@ -20,6 +20,9 @@ class RedirectIfAuthenticated
     {
         if (Auth::guard('admin')->check()) {
             return redirect('/admin');
+        } else if (Auth::guard('siswa')->check()) {
+
+            return redirect('/siswa_history');
         }
         return $next($request);
     }

@@ -69,7 +69,7 @@ class SiswaController extends Controller
             'kelas_id'=>$request->kelas,
             'alamat'=>$request->alamat,
             'no_telp'=>$request->notelp,
-            'status'=>'belum_dibayar'
+            'password'=>bcrypt('password')
         ]);
 
         $now = date('Y-m-d');
@@ -165,6 +165,25 @@ class SiswaController extends Controller
             $join->on('tbl_pembayaran.spp_id','=','tbl_spp.id_spp');
         })->where('ket','lunas')
         ->get();
-        return view('admin/siswa.history',['data'=>$data]);
+        if (Auth::guard('admin')->check()) {
+            return view('admin/siswa.history',['data'=>$data]);
+        } else {
+            return view('siswa.history',['data'=>$data]);
+        }
+   
+    }
+    public function login(Request $request)
+    {
+        if (Auth::guard('siswa')->attempt(['nisn' => $request->nisn, 'password' => $request->password])) {
+            // if successful, then redirect to their intended location
+          return redirect()->intended('/siswa_depan');
+        } else {
+          return redirect('/')->with('message','username atau password salah');
+        }
+    }
+
+    public function depan()
+    {
+        return view('siswa.index');
     }
 }

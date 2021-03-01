@@ -20,6 +20,7 @@ Route::get('/', function () {
 
 Route::get('/login', 'LoginController@getLogin')->name('login');
 Route::post('/proseslogin', 'LoginController@postLogin');
+Route::post('/prosesloginsiswa', 'SiswaController@login');
 Route::get('/logout', 'LoginController@logout');
 
 // petugas
@@ -53,4 +54,11 @@ Route::group(['middleware' => 'auth:admin'], function(){
     Route::view('rekap', 'admin/laporan.rekap');
     Route::get('cetak', 'LaporanController@cetak');
 });
+
+Route::group(['middleware'=>'auth:siswa'], function(){
+    Route::get('siswa_depan','SiswaController@depan');
+    Route::get('siswa_history','SiswaController@history');
+});
+// siswa
+
 
