@@ -108,6 +108,10 @@ class SppController extends Controller
             'tahun'=>$request->tahun,
             'nominal'=>$request->nominal
         ]);
+        DB::table('tbl_pembayaran')->where('spp_id',$id)->update([
+            'tahun_bayar'=>$request->tahun,
+            'jumlah_bayar'=>$request->nominal
+        ]);
         return redirect('spp')->with('message','Data berhasil diubah');
     }
 
@@ -120,6 +124,7 @@ class SppController extends Controller
     public function destroy($id)
     {
         DB::table('tbl_spp')->where('id_spp',$id)->delete();
+        DB::table('tbl_pembayaran')->where('spp_id',$id)->delete();
         return redirect()->back()->with('message','Data berhasil dihapus');
     }
 }

@@ -38,7 +38,7 @@ class SiswaController extends Controller
         ->where('nama','like',"%{$request->keyword}%")
         ->join('tbl_kelas', function($join){
             $join->on('tbl_siswa.kelas_id','=','tbl_kelas.id_kelas');
-        })->orderBy('kelas_id','asc')->orderBy('nama','asc')->paginate(5);
+        })->orWhere('nama_kelas','like',"%{$request->keyword}%")->orderBy('kelas_id','asc')->orderBy('nama','asc')->paginate(5);
         return view('admin/siswa.index',['data'=>$data]);
     }
 
@@ -134,6 +134,10 @@ class SiswaController extends Controller
             'no_telp'=>$request->notelp
         ]);
 
+        DB::table('tbl_pembayaran')->where('nisn_siswa',$id)->update([
+            'nisn_siswa'=>$request->nisn
+        ]);
+
         return redirect('siswa')->with('message','Data berhasil diubah');
     }
 
@@ -146,6 +150,7 @@ class SiswaController extends Controller
     public function destroy($id)
     {
         DB::table('tbl_siswa')->where('nisn',$id)->delete();
+        DB::table('tbl_pembayaran')->where('nisn_siswa',$id)->delete();
         return redirect()->back()->with('message','data berhasil dihapus');
     }
 

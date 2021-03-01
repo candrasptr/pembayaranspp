@@ -29,7 +29,10 @@ class KelasController extends Controller
      */
     public function index(Request $request)
     {
-        $data = DB::table('tbl_kelas')->where('nama_kelas','like',"%{$request->keyword}%")->paginate(5);
+        $data = DB::table('tbl_kelas')
+        ->where('nama_kelas','like',"%{$request->keyword}%")
+        ->orWhere('kompetensi_keahlian','like',"%{$request->keyword}%")->paginate(5);
+
         return view('admin/kelas.index',['data'=>$data]);
     }
 
