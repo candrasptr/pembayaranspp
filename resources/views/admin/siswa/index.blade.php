@@ -11,8 +11,10 @@
       <div class="card mt-3">
         <div class="card-body">
             
-          {{-- Button tambah --}}
-          <a href="{{ route('siswa.create') }}" class="btn btn-icon icon-left btn-danger mb-3 px-3"><i class="fas fa-plus"></i></a>
+          @if (Auth::guard('admin')->user()->level == 'admin')
+            {{-- Button tambah --}}
+          <a href="{{ route('siswa.create') }}" class="btn btn-icon icon-left btn-success mb-3 px-3"><i class="fas fa-plus"></i></a>  
+          @endif
             
           {{-- Form search --}}
           <div class="float-right">
@@ -20,7 +22,7 @@
               <div class="input-group mb-3">
                 <input name="keyword" id="caribuku" type="text" class="form-control" placeholder="Cari..." aria-label="Cari" aria-describedby="button-addon2" value="{{ Request()->keyword }}" autocomplete="off">
                 <div class="input-group-append">
-                  <button id="btncaribuku" class="btn btn-outline-danger bg-danger" type="submit" id="button-addon2"><i class="fas fa-search text-light"></i></button>
+                  <button id="btncaribuku" class="btn btn-outline-success bg-success" type="submit" id="button-addon2"><i class="fas fa-search text-light"></i></button>
                 </div>
               </div>
             </form>
@@ -66,6 +68,7 @@
                 <td>
 
                   {{-- Button edit --}}
+                  @if (Auth::guard('admin')->user()->level == 'admin')
                   <a href="{{ route('siswa.edit',$item->nisn) }}" class="btn btn-success mt-2"><i class="fas fa-edit"></i></a>
                   <a href="#" data-id="" class="btn btn-danger confirm_script-{{$item->nisn}} mr-3 mt-2">
                     <form action="{{ route('siswa.destroy',$item->nisn)}}" class="delete_form-{{$item->nisn}}" method="POST">
@@ -73,7 +76,9 @@
                     @csrf
                     </form>
                     <i class="fas fa-trash"></i>
-                  </a><br>
+                  </a><br> 
+                  @endif
+                  
                   <a href="{{ route('siswa.history',$item->nisn) }}" class="btn btn-warning mt-2"> HISTORY </a>
               </td>
             </tr>

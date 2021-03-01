@@ -22,7 +22,7 @@
 					</div>
 					<input autocomplete="off" name="keyword" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
 					<div class="input-group-append">
-						<button class="btn btn-danger px-3" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
+						<button class="btn btn-success px-3" type="submit" id="button-addon2"><i class="fas fa-search"></i></button>
 					</div>
 				  </div>
 			</form>

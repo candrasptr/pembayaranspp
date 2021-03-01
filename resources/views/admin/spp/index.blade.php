@@ -1,6 +1,6 @@
 @extends('admin/layout.master')
 
-@section('title','spp')
+@section('title','Spp')
 @section('title2','index')
 @section('spp','active')
 @section('konten')
@@ -12,7 +12,7 @@
         <div class="card-body">
             
           {{-- Button tambah --}}
-          <a href="{{ route('spp.create') }}" class="btn btn-icon icon-left btn-danger mb-3 px-3"><i class="fas fa-plus"></i></a>
+          <a href="{{ route('spp.create') }}" class="btn btn-icon icon-left btn-success mb-3 px-3"><i class="fas fa-plus"></i></a>
             
           {{-- Form search --}}
           <div class="float-right">
@@ -20,7 +20,7 @@
               <div class="input-group mb-3">
                 <input name="keyword" id="caribuku" type="text" class="form-control" placeholder="Cari..." aria-label="Cari" aria-describedby="button-addon2" value="{{ Request()->keyword }}" autocomplete="off">
                 <div class="input-group-append">
-                  <button id="btncaribuku" class="btn btn-outline-danger bg-danger" type="submit" id="button-addon2"><i class="fas fa-search text-light"></i></button>
+                  <button id="btncaribuku" class="btn btn-outline-success bg-success" type="submit" id="button-addon2"><i class="fas fa-search text-light"></i></button>
                 </div>
               </div>
             </form>

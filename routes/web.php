@@ -24,7 +24,7 @@ Route::get('/logout', 'LoginController@logout');
 
 // petugas
 Route::group(['middleware' => 'auth:admin'], function(){
-    Route::view('/dashboard', 'admin/dashboard.index');
+    Route::get('/dashboard', 'DashboardController@index');
 
     //siswa
     Route::resource('siswa', 'SiswaController');

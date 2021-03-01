@@ -15,6 +15,10 @@
         <li class="menu-header">transaksi</li>
         <li class="@yield('transaksi')"><a class="nav-link" href="/transaksi"><i class="fas fa-donate"></i> <span>Pembayaran</span></a></li>
         
+        @if (Auth::guard('admin')->user()->level == 'petugas')
+        <li class="@yield('siswa')"><a class="nav-link" href="/siswa"><i class="fas fa-address-book"></i> <span>History</span></a></li>
+        @endif
+
         @if (Auth::guard('admin')->user()->level == 'admin')
         <li class="menu-header">Entry data</li>
         <li class="@yield('siswa')"><a class="nav-link" href="/siswa"><i class="fas fa-user"></i> <span>Siswa</span></a></li>

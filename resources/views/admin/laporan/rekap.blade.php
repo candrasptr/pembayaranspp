@@ -39,7 +39,7 @@
               </div>
             </div>
             <div class="col-md-12">
-              <button type="submit" class="btn btn-danger btn-sm btn-block">Rekap</button>
+              <button type="submit" class="btn btn-success btn-sm btn-block">Rekap</button>
             </div> 
           </form>
         </div>

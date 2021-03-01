@@ -11,7 +11,7 @@
       <div class="card mt-3">
         <div class="card-body">
             {{-- Button tambah --}}
-          <a href="data_siswa_cetak" class="btn btn-icon icon-left btn-danger mb-3 px-3">CETAK</a>
+          <a href="data_siswa_cetak" class="btn btn-icon icon-left btn-success mb-3 px-3">CETAK</a>
           
           {{-- tabel --}}
           <table class="table">
