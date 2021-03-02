@@ -32,16 +32,16 @@
         <th>NAMA PETUUGAS</th>
 		<th>LEVEL</th>		
 	</tr>
-	<tr>
+	
         @php
             $no = 1
         @endphp
-        @foreach ($data as $item)
+        @foreach ($data as $item)<tr>
 		<td align="center">{{ $no++ }}</td>
 		<td align="center">{{ $item->nama_petugas }}</td>
 		<td align="">{{ $item->level }}</td>
-        @endforeach
-	</tr>
+        </tr>@endforeach
+	
 	</table>
 <table width="100%">
 	<tr>

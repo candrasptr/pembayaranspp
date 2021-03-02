@@ -39,11 +39,11 @@
 		<th>JUMLAH</th>
 		<th>KETERANGAN</th>
 	</tr>
-	<tr>
         @php
             $no = 1
         @endphp
         @foreach ($data as $item)
+        <tr>
 		<td align="center">{{ $no++ }}</td>
 		<td align="center">{{ $item->nisn }}/{{ $item->nis }}</td>
 		<td align="center">{{ $item->nama }}</td>
@@ -52,8 +52,8 @@
 		<td align="">{{ $item->tahun }}</td>
 		<td align="">{{ $item->nominal }}</td>
 		<td align="center">{{ $item->ket }}</td>
+		</tr>
         @endforeach
-	</tr>
 <tr>
 		<td colspan="7" align="right">TOTAL</td>
 		<td align="right"><b>{{ $data->sum('nominal') }}</b></td>

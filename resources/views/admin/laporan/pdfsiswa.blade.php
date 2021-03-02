@@ -33,17 +33,17 @@
         <th>NAMA SISWA</th>
 		<th>KELAS</th>		
 	</tr>
-	<tr>
+	
         @php
             $no = 1
         @endphp
-        @foreach ($data as $item)
+        @foreach ($data as $item)<tr>
 		<td align="center">{{ $no++ }}</td>
 		<td align="center">{{ $item->nisn}}/{{ $item->nis }}</td>
 		<td align="">{{{ $item->nama }}}</td>
         <td>{{ $item->nama_kelas }}</td>
-        @endforeach
-	</tr>
+        </tr>@endforeach
+	
 	</table>
 <table width="100%">
 	<tr>
