@@ -56,10 +56,11 @@ Route::group(['middleware' => 'auth:admin'], function(){
     Route::get('cetak', 'LaporanController@cetak');
 });
 
+// siswa
 Route::group(['middleware'=>'auth:siswa'], function(){
     Route::get('siswa_depan','SiswaController@depan');
     Route::get('siswa_history\{id}','SiswaController@historysiswa')->name('siswa.his');
 });
-// siswa
+
 
 
